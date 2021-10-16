@@ -22,28 +22,24 @@ int main()
 	cout << "x = "; cin >> x;
 
 	// розгалуження в повній формі
-	if (x <= -2 * R1)
-		y = -R1 * x - 2 * pow(R1, 2.0);
-	else
-		if (-1 - 2 * R1 < x && x <= -2 * R1)
-			y = -R1 * x - 2 * pow(R1, 2.0);
-		else
-			if (-2 * R1 < x && x <= -R1)
-				y = sqrt(x * (x + 2 * R1));
-			else
-				if (-R1 < x && x <= 0)
-					y = sqrt(x * (x + 2 * R1));
-				else
-					if (0 < x && x <= R2)
-						y = -sqrt(x * (x - 2 * R2));
-					else
-						if (R2 < x && x <= 2 * R2)
-							y = -sqrt(x * (x - 2 * R2));
-						else
-							if (2 * R2 < x && x <= 6)
-								y = (2 * R2 - x) / (6 - 2 * R2);
-							else
-								y = -1;
+    if (x <= -2 * R1)
+        y = -R1 * x - 2 * pow(R1, 2);
+    else
+        if (-1 - 2 * R1 < x && x <= -2 * R1)
+            y = -R1 * x - 2 * pow(R1, 2);
+        else
+            if (-2 * R1 < x && x <= 0)
+                y = sqrt(pow(R1, 2) + pow((x + R1), 2));
+
+            else
+                if (0 < x && x <= 2 * R2)
+                    y = -sqrt(pow(R2, 2) + pow((x - R2), 2));
+
+                else
+                    if (2 * R2 < x && x <= 6)
+                        y = (2 * R2 - x) / (6 - 2 * R2);
+                    else
+                        y = -1;
 
 	cout << endl;
 	cout << "y = " << y << endl;
